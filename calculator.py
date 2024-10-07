@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from opperations import Calculator
 
 def main():
