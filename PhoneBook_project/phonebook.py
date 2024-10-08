@@ -12,7 +12,7 @@ class PhoneBook:
     def __init__(self, file_name = 'conatct_data.json'):
         self.contacts = []
         self.file_name = file_name
-        self.valiator = pnv()
+        self.validator = pnv()
         self.load_contacts()
 
     def load_contacts(self) -> None:

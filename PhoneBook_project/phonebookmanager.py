@@ -17,7 +17,7 @@ class PhoneBookManager:
 
     def run(self):
         while True:
-            self.show_menu()
+            self.menu()
 
             user_choice = input('Enter your choice: ').strip()
 
