@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import json
 import os
 from contact import Contact
@@ -8,7 +10,7 @@ class ContactNotFoundError(Exception):
 
 class PhoneBook:
     def __init__(self, file_name = 'conatct_data.json'):
-        self.contact = []
+        self.contacts = []
         self.file_name = file_name
         self.valiator = pnv()
         self.load_contacts()
@@ -17,7 +19,10 @@ class PhoneBook:
         if os.path.exists(self.file_name):
             with open(self.file_name, 'r') as file:
                 contact_data = json.load(file)
-                self.contacts = [Contact['name'], contact['phone'] for contact incontacts_data]
+                #self.contacts = [Contact['name'], contact['phone'] for contact in contacts_data]
+                self.contacts = [Contact(contact['name'], contact['phone']) for contact in contacts_data]
+
+
         else:
             self.contacts = []
 
